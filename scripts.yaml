@@ -1,23 +1,10 @@
-light_fade_up_from_zero:
+
+
+light_transition_brightness:
   sequence:
-
-    # Dim the fucker and turn it off
+    # Dim the provided lights to the provided brightness value
     - service: light.turn_on
-      entity_id: light.light_patio_north              
-      data:
-        transition: 2
-        brightness: 0
-    - delay: 0:00:03
-    - service: light.turn_off
-      entity_id: light.light_patio_north              
-    
-    # Turn the fucker back on
-    - delay: 0:00:2
-    - service: light.turn_on
-      entity_id: light.light_patio_north
-      data:
-        transition: 20
-        rgb_color: [0,0,255]
-        brightness: 255
-
-
+      data_template:
+        transition: '{{ duration | default (3) }}'
+        brightness: '{{ brightnessLevel | default(0) }}'
+        entity_id: '{{ entity }}'
