@@ -1,0 +1,54 @@
+- id: '1647308492369'
+  name: Evening lighting
+  entities:
+    light.master_bedroom:
+      min_mireds: 154
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 254
+      hs_color:
+      - 300
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 255
+      xy_color:
+      - 0.385
+      - 0.155
+      off_brightness:
+      icon: mdi:lamp
+      friendly_name: Master Bedroom Lamp
+      supported_features: 59
+      state: 'on'
+  icon: mdi:moon-new
+- id: '1647308665540'
+  name: Night Light
+  entities:
+    light.master_bedroom:
+      min_mireds: 154
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 3
+      hs_color:
+      - 360
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      off_brightness:
+      icon: mdi:lamp
+      friendly_name: Light - Master Bedroom
+      supported_features: 59
+      state: 'on'
+  icon: mdi:theme-light-dark

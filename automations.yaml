@@ -1,0 +1,84 @@
+- id: '1647285858779'
+  alias: Activate Dusk Lighting (Interior)
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 00:30
+  condition: []
+  action:
+  - data:
+      color_temp: 332
+      transition: 20
+      brightness: 255
+    service: light.turn_on
+    target:
+      entity_id: light.master_bedroom
+  mode: single
+- id: '1647308535017'
+  alias: 'Activate Evening Lighting '
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:00:00'
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.evening_lighting
+    metadata: {}
+  mode: single
+- id: '1647308770281'
+  alias: Activate Night Light
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.night_light
+    metadata: {}
+  mode: single
+- id: '1647308844345'
+  alias: Deactivate Night Light
+  description: ''
+  trigger:
+  - platform: time
+    at: 01:00:00
+  condition: []
+  action:
+  - service: light.turn_off
+    data:
+      transition: 5
+    target:
+      device_id: 36abca42dce8f12bcaefbe36a3ec4699
+  mode: single
+- id: '1647310714010'
+  alias: Activate Grape Lights
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -01:00:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 43d791ea2a081ce7fa8461b3d129269c
+    entity_id: switch.plug_1_on_off
+    domain: switch
+  mode: single
+- id: '1647310775175'
+  alias: Deactivate Grape Lights
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 43d791ea2a081ce7fa8461b3d129269c
+    entity_id: switch.plug_1_on_off
+    domain: switch
+  mode: single
