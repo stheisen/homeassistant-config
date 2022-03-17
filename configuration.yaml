@@ -1,20 +1,34 @@
+homeassistant: !include homeassistant.yaml
+
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
+cloud:
+config:
+counter:
+dhcp:
+history:
+image:
+logbook:
+map:
+media_source:
+mobile_app:
+my:
+person:
+ssdp:
+stream:
+sun:
+system_health:
+webhook:
+zeroconf:
 
-homeassistant:
-  name: Home
-  latitude: 41.088207323676116
-  longitude: -81.4272467302109
-  unit_system: imperial
-  time_zone: America/New_York
+tts: !include tts.yaml
 
-# Text to speech
-tts:
-  - platform: google_translate
-
-automation: !include_dir_merge_list automations/
+automation: !include automations.yaml
+automation manual: !include_dir_list automations/
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+group: !include_dir_named groups/
 
 # Custom Panels
 panel_custom:

@@ -1,4 +1,21 @@
 
+light_transition_rgb:
+  sequence:
+    - service: light.turn_on
+      data_template:
+        transition: '{{ duration | default (3) }}'
+        brightness: '{{ brightnessLevel | default(255) }}'
+        rgb_color: '{{ colorValue }}'
+        entity_id:  '{{ entity }}'
+
+light_transition_temp:
+  sequence:
+    - service: light.turn_on
+      data_template:
+        transition: '{{ duration | default (3) }}'
+        color_temp: '{{ colorValue }}'
+        brightness: '{{ brightnessLevel | default(255) }}'
+        entity_id:  '{{ entity }}'
 
 light_transition_brightness:
   sequence:
@@ -7,4 +24,5 @@ light_transition_brightness:
       data_template:
         transition: '{{ duration | default (3) }}'
         brightness: '{{ brightnessLevel | default(0) }}'
-        entity_id: '{{ entity }}'
+        entity_id:  '{{ entity }}'
+

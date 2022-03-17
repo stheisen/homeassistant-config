@@ -1,0 +1,7 @@
+name: Our Home
+latitude: !secret latitude
+longitude: !secret longitude
+elevation: !secret elevation
+unit_system: imperial
+currency: USD
+temperature_unit: F
