@@ -1,0 +1,4 @@
+name: lights_frontYard
+entities:
+  - light.light_gargage_north
+  - light.light_garage_south

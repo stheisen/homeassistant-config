@@ -1,0 +1,25 @@
+# -----------------------------------------------------------------------------
+# Activate lights in the front yard in color to support Ukraine's war
+# -----------------------------------------------------------------------------
+alias: Garage Lights - On (Support Ukraine)
+id: "565c0d0b-7dac-4138-a282-63f5e05eb11e"
+description: "Activate lights in the front yard in color to support Ukraine's war"
+trigger:
+  - platform: sun
+    event: sunset
+    offset: 00:45
+condition: []
+action:
+  - service: script.light_transition_rgb
+    data:
+      entity: light.light_garage_south
+      brightnessLevel: 255
+      duration: 10
+      colorValue: [255, 255, 0]
+  - service: script.light_transition_rgb
+    data:
+      entity: light.light_garage_north
+      brightnessLevel: 255
+      duration: 10
+      colorValue: [0, 0, 255]
+mode: single

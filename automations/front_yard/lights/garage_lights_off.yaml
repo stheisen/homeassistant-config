@@ -1,0 +1,18 @@
+# -----------------------------------------------------------------------------
+# Turn off the garage lights - with a smooth tranistion
+# -----------------------------------------------------------------------------
+alias: Garage Lights - Off
+id: "741f9009-3742-4ed9-b378-8df4b931ff8e"
+description: ""
+trigger:
+  - platform: sun
+    event: sunrise
+    offset: 00:10
+condition: []
+action:
+  - service: script.light_transition_brightness
+    data:
+      entity: light.light_garage_north,
+        light.light_garage_south
+      brightnessLevel: 0
+mode: single

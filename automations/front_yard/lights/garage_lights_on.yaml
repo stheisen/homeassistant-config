@@ -1,0 +1,18 @@
+# -----------------------------------------------------------------------------
+# Activate the lights in the front yard
+# -----------------------------------------------------------------------------
+alias: Garage Lights - On
+id: "9d753ad1-2a2b-4b7f-9d71-ba979e5a8dd3"
+description: ""
+trigger:
+  - platform: time
+    at: "22:00:00"
+condition: []
+action:
+  - service: script.light_transition_temp
+    data:
+      entity: light.light_garage_north,
+        light.light_garage_south
+      brightnessLevel: 255
+      colorValue: 371
+mode: single
