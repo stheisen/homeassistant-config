@@ -1,6 +1,6 @@
 # Hardware Listing
 
-# Shelly 
+## Shelly 
 
 Shelly's devices use WiFi which really increases the range that these devices function. The best part is they
 operate without or (in my case) without dependancy on the cloud.  All of the shelly devices are added to the 
@@ -18,5 +18,5 @@ I will use the table below to document the devices used on my automation, and so
 | --- | --- | :---: | --- |
 | [Shelly 1](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/) | Light Switch | :heavy_check_mark: | Shelly's flagship product and it is very simple to use. This is used in several location in my automation, anywhere there is a non-dimmable paddle switch I use these relays. |
 
-# Zigbee Devices
+## Zigbee Devices
 
