@@ -16,7 +16,7 @@ I will use the table below to document the devices used on my automation, and so
 
 | Device Name | Function | Satisfaction | Notes |
 | --- | --- | :---: | --- |
-| [Shelly 1](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/) | Light Switch | :heavy_check_mark: | This is used in several location in my automation, anywhere there is a non-dimmable paddle switch I use these relays. |
+| [Shelly 1](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/) | Light Switch | :heavy_check_mark: | Shelly's flagship product and it is very simple to use. This is used in several location in my automation, anywhere there is a non-dimmable paddle switch I use these relays. |
 
 # Zigbee Devices
 
