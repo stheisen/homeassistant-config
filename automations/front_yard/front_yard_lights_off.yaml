@@ -1,0 +1,17 @@
+# -----------------------------------------------------------------------------
+# Activate the front yard flood lights.  These are plugged into outlets
+# on the outside of the house that are controlled by a switch inside the house
+# -----------------------------------------------------------------------------
+id: "07fc963c-2a5d-479a-a9db-37d04a3b85b5"
+alias: Front Yard Lights - Off
+description: "Turns off the outlets the landscapping flood lights are plugged into"
+trigger:
+  - platform: sun
+    event: sunrise
+    offset: 00:10
+condition: []
+action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.front_yard_outlets
+mode: single
