@@ -8,7 +8,7 @@ description: "Turns on the outlets the landscapping flood lights are plugged int
 trigger:
   - platform: sun
     event: sunset
-    offset: 00:45
+    offset: 00:15
 condition: []
 action:
   - service: switch.turn_on

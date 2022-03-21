@@ -7,7 +7,7 @@ description: "Activate lights in the front yard in color to support Ukraine's wa
 trigger:
   - platform: sun
     event: sunset
-    offset: 00:45
+    offset: 00:15
 condition: []
 action:
   - service: script.light_transition_rgb
