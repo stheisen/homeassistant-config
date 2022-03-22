@@ -1,4 +1,4 @@
-[Home](/README.md)
+[Home](/)
 # Hardware Listing
 
 ## Table of Contents
