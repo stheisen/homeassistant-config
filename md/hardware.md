@@ -1,3 +1,4 @@
+[Home](/README.md)
 # Hardware Listing
 
 ## Table of Contents
