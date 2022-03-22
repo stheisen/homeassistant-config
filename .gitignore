@@ -7,6 +7,9 @@
 # Ignore some specific directories
 custom_components/**
 
+# Ignore some specific files
+alexa_media*
+
 # ignore any of these file patterns no matter where they live in the directory structure using double *
 **.HA_VERSION
 **.log*
@@ -15,5 +18,3 @@ custom_components/**
 **ip_bans.yaml
 **known_devices.yaml
 **secrets*
-alexa_mediasteve@theisenonline.netget.html
-alexa_mediasteve@theisenonline.netpost.html
