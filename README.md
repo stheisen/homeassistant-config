@@ -1,8 +1,12 @@
 # Table of Contents
    * [Home Assistant configuration](#home-assistant-configuration)
       * [Hardware/Devices](#devices)
+      * [Integrations]
 
 # Home Assistant configuration
 
 ## Hardware/Devices
-You can review the notes on the hardware I am using in [this list](md/hardware.md)
+You can review the notes on the hardware used in [this list](md/hardware.md)
+
+## Integrations
+You can review the notes on the integrations used in [this list](md/integrations.md)
