@@ -1,7 +1,7 @@
 # Table of Contents
    * [Home Assistant configuration](#home-assistant-configuration)
       * [Hardware/Devices](#devices)
-      * [Integrations]
+      * [Integrations](# Integrations)
 
 # Home Assistant configuration
 

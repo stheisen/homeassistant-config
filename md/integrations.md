@@ -2,12 +2,19 @@
 
 # Table of Contents
   * [HACS](#HACS)
-    * Alexa Media Player (#Alexa-Media-Player)
+    * [Alexa Media Player](#Alexa-Media-Player)
 
 # HACS
+Although some want to avoid it, there comes a time when the core of Home Assistant can't provide all the needs of your desired automation. 
+The first place most automators turn to is the Home Assistant Community Store ([HACS](https://hacs.xyz/)).
+After following the download and configration steps listed on the [HACS website](https://hacs.xyz/), I added the following HACS integrations below.
 
 ## Alexa Media Player
+If you have a pile of Echos spread around your house, then the [Alexa Media Player](https://github.com/custom-components/alexa_media_player) HACS integration 
+is a great choice to get text-to-speech notifications from them **for free**.  Getting the integration up an running via 2FA was a bit challenging, so 
+make sure to follow the [Installation and Configuration](https://github.com/custom-components/alexa_media_player/wiki/Configuration) documentation closely.
 
+### Service Examples
 Adjust volume:
 ```
 service: media_player.volume_set
