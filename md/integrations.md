@@ -15,20 +15,20 @@ is a great choice to get text-to-speech notifications from them **for free**.  G
 make sure to follow the [Installation and Configuration](https://github.com/custom-components/alexa_media_player/wiki/Configuration) documentation closely.
 
 ### Service Examples
-Adjust volume:
+Adjust the volume devices:
 ```
 service: media_player.volume_set
 data:
-  entity_id: media_player.kitchen
+  entity_id: media_player.kitchen, media_player.garage
   volume_level: '0.2'
 ```
 
-Read some text on a specific device:
+Read text on devices:
 ```
 service: notify.alexa_media
 data:
   message: Good evening, this is a test.
   data:
     type: tts
-  target: media_player.kitchen
+  target: media_player.kitchen, media_player.garage
 ```
