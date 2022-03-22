@@ -1,16 +1,17 @@
-# Ignore folders.
-.*
-
+# Things to NOT ignore
 !.gitignore
 
-# Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
-ip_bans.yaml
-secrets.yaml
-known_devices.yaml
+# Ignore hidden folders
+.*
 
-#ignore log and db files
-*.log*
-*.db*
+# Ignore some specific directories
+custom_components/**
 
-# ignore .HA_VERSION
-.HA_VERSION
+# ignore any of these file patterns no matter where they live in the directory structure using double *
+**.HA_VERSION
+**.log*
+**.db*
+
+**ip_bans.yaml
+**known_devices.yaml
+**secrets*
