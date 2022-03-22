@@ -1,3 +1,4 @@
+[Home](https://github.com/stheisen/homeassistant-config)
 # Integration Details
 
 ## Table of Contents

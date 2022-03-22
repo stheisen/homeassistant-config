@@ -1,4 +1,4 @@
-[Home](/)
+[Home](https://github.com/stheisen/homeassistant-config)
 # Hardware Listing
 
 ## Table of Contents
