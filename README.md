@@ -5,4 +5,4 @@
 # Home Assistant configuration
 
 ## Hardware/Devices
-You can review the notes on the hardware I am using in [this list](hardware.md)
+You can review the notes on the hardware I am using in [this list](md/hardware.md)
