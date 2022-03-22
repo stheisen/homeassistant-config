@@ -1,12 +1,14 @@
-# Table of Contents
+# Tyzen9 Home Assistant Adventures
+
+## Table of Contents
    * [Home Assistant configuration](#home-assistant-configuration)
       * [Hardware/Devices](#devices)
       * [Integrations](# Integrations)
 
-# Home Assistant configuration
+### Home Assistant configuration
 
-## Hardware/Devices
+### Hardware/Devices
 You can review the notes on the hardware used in [this list](md/hardware.md)
 
-## Integrations
+### Integrations
 You can review the notes on the integrations used in [this list](md/integrations.md)
