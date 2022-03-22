@@ -15,7 +15,7 @@ is a great choice to get text-to-speech notifications from them **for free**.  G
 make sure to follow the [Installation and Configuration](https://github.com/custom-components/alexa_media_player/wiki/Configuration) documentation closely.
 
 ### Service Examples
-Adjust the volume devices:
+Adjust the volume of devices:
 ```
 service: media_player.volume_set
 data:
