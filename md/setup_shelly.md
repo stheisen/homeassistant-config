@@ -1,11 +1,12 @@
-Home](https://github.com/stheisen/homeassistant-config)
+[Home](https://github.com/stheisen/homeassistant-config)
 # Shelly Setup
 
-## Table of Contents
-  * [Configuring the Shelly 1/RGBW2](#Shelly-1/RGBW2)
-  
+The Shelly devices are among the easiest to configure in my home automation setup.  Just give them power, and they light up a WIFI network that hosts a small web application allowing for easy configuration to prepare the device to be added to Home Assistant (HA). As the Shelly firmware, and HA evolve overtime the following instructions are sure to become out of date.  These notes are ment to serve as a guideline for adding Shelly devices to my HA implementation and will be updated only as I run into workflow changes.
 
-The Shelly devices are among the easiest to configure in my home automation setup.  Just give them power, and they light up a WIFI network that hosts a small web application allowing for easy configuration to prepare the device to be added to Home Assistant (HA). As the Shelly firmware, and HA evolve overtime the following instructions are sure to become out of date.  These notes are ment to serve as a guideline for adding Shelly devices to my HA implementation and I will keep them up to date only as I run into changes with the workflow.
+## Table of Contents
+  * Shelly Devices
+    * [Configuring the Shelly 1/RGBW2](#Shelly-1/RGBW2) (Updated: March 2022) 
+  * [Adding Shelly Devices to HA](#Adding-Shelly-Devices-to-HA) (Updated: March 2022) 
 
 ### Shelly 1/RGBW2
 The HA implelmentation instructions for the Shelly 1, and the Shelly RGBW2 are for the most part the same.  This is **NOT** a comprehensive run through of all the options a Shelly device provides.  Instead, these are merely  guidelines providing a repeatable set of actions to consistently connect Shelly devices to my HA implementation.
@@ -51,3 +52,34 @@ It is assumed when following this section that the device has been safely and pr
 - Finally, validate the behavior of an attached physical switch by clicking on the **Settings** option, and expanding the **BUTTON TYPE** section. Choose the appropriate behavior for the physical switch connected to the Shelly.
 
 <div align="center"><img src="./images/setup_shelly/shelly_buttonType.png" width="35%"></div>
+
+
+### Adding Shelly Devices to HA
+__NOTE: This section expects the user to have a high level of familiarty with HA, and therefore screenshots for adding Shelly devices to HA are not provided__
+
+Mostly for stability reasons, all of my Shelly devices are added to HA using the core functionality supplied and follow this simple workflow.
+
+- In the HA configuration section, navigate to **Integrations**
+- At the bottom right click **+ ADD INTEGRATION**
+- Search for and click the option for "Shelly"
+- Either select the discoverd Shelly device, or enter the assigned static IP Address of the new device and click **SUBMIT**
+- Enter the credentials used to lockdown the Shelly web interface
+- (Optionally) select an Area to associate this new device to and click **FINISH**
+- Navigate to the Shelly integration card, and select the newly added device
+- Provide a meaningful name for the device by clicking the Pencil icon at the top of the interface, click **UPDATE** and then **APPLY**
+- Return to the **Integration** screen, navigate to the Shelly integration card, and select the newly added device
+- Select the "x entities" option to access the list of entities the device provides
+
+<div align="center"><img src="./images/setup_shelly/shelly_selectEntities.png" width="35%"></div>
+
+- In the list of entities for this device, make sure to enable:
+  - firmware_update - Provides the ability to trigger and automation for available firware updates
+  - rssi - Provides the ability to trigger and automation for a weak WIFI signal
+- This device is ready to automate!
+
+
+
+
+
+
+
