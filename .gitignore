@@ -5,6 +5,7 @@
 .*
 
 # Ignore some specific directories
+image/
 custom_components/**
 
 # Ignore some specific files
