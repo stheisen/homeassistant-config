@@ -55,7 +55,7 @@ It is assumed when following this section that the device has been safely and pr
 
 
 ### Adding Shelly Devices to HA
-__NOTE: This section expects the user to have a high level of familiarty with HA, and therefore screenshots for adding Shelly devices to HA are not provided__
+*NOTE: This section expects the user to have a high level of familiarty with HA, and therefore screenshots for adding Shelly devices to HA are not provided*
 
 Mostly for stability reasons, all of my Shelly devices are added to HA using the core functionality supplied and follow this simple workflow.
 
