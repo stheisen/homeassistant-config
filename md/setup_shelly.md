@@ -8,4 +8,4 @@ Home](https://github.com/stheisen/homeassistant-config)
 ### Shelly 1
 1. Wire the device as per the instructions
 2. Once powered on connect to the shelly wifi with a mobile device
-<center><img src="./images/setup_shelly/shelly_wifiSelect.png" height="500" ></center>
+<p align="center"><img src="./images/setup_shelly/shelly_wifiSelect.png" height="500"></p>
