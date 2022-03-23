@@ -68,7 +68,7 @@ Mostly for stability reasons, all of my Shelly devices are added to HA using the
 - Navigate to the Shelly integration card, and select the newly added device
 - Provide a meaningful name for the device by clicking the Pencil icon at the top of the interface, click **UPDATE** and then **APPLY**
 - Return to the **Integration** screen, navigate to the Shelly integration card, and select the newly added device
-- Select the "x entities" option to access the list of entities the device provides
+- Select the "# entities" option to access the list of entities this device provides
 
 <div align="center"><img src="./images/setup_shelly/shelly_selectEntities.png" width="35%"></div>
 
