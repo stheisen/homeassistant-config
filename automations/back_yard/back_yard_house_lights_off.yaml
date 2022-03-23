@@ -1,0 +1,16 @@
+# -----------------------------------------------------------------------------
+# Deactivate the backyard house lights.
+# -----------------------------------------------------------------------------
+id: "7d5efd56-d07f-4c31-aea5-affead46dfb0"
+alias: Back Yard House Lights - Off
+description: ""
+trigger:
+  - platform: sun
+    event: sunrise
+    offset: 00:10
+condition: []
+action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.garage_man_door
+mode: single
