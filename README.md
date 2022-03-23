@@ -1,14 +1,11 @@
-# Tyzen9 Home Assistant Adventures
+# Tyzen9 - Home Assistant Adventures
 
 ## Table of Contents
    * [Home Assistant configuration](#home-assistant-configuration)
-      * [Hardware/Devices](#devices)
-      * [Integrations](#Integrations)
+      * [List of my Hardware/Devices](#devices)
+      * [List of my configured HA Integrations](#Integrations)
+   * Device Configuration Instructions
+      * [Shelly Devices](md/shelly_setup.md)
 
 ### Home Assistant configuration
 
-### Hardware/Devices
-You can review the notes on the hardware used in [this list](md/hardware.md)
-
-### Integrations
-You can review the notes on the integrations used in [this list](md/integrations.md)
