@@ -12,5 +12,7 @@ condition: []
 action:
   - service: switch.turn_off
     target:
-      entity_id: switch.garage_man_door
+      entity_id: 
+        switch.garage_man_door,
+        switch.back_yard_porch
 mode: single
