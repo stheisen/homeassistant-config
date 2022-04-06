@@ -13,9 +13,8 @@
         brightness: 255
       service: light.turn_on
       target:
-        entity_id: light.master_bedroom
+        device_id: 36abca42dce8f12bcaefbe36a3ec4699
   mode: single
-
 - id: "1647308535017"
   alias: "Activate Evening Lighting "
   description: ""
@@ -28,7 +27,6 @@
       target:
         entity_id: scene.evening_lighting
   mode: single
-
 - id: "1647308770281"
   alias: Activate Night Light
   description: ""
@@ -41,7 +39,6 @@
       target:
         entity_id: scene.night_light
   mode: single
-
 - id: "1647308844345"
   alias: Deactivate Night Light
   description: ""
@@ -55,4 +52,52 @@
         transition: 5
       target:
         device_id: 36abca42dce8f12bcaefbe36a3ec4699
+  mode: single
+- id: "1649085009468"
+  alias: Living Room Occupied
+  description: ""
+  trigger:
+    - type: occupied
+      platform: device
+      device_id: cbed1f0eb747fa8492521be061c640e2
+      entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_2f18f807_occupancy
+      domain: binary_sensor
+  condition: []
+  action:
+    - type: turn_on
+      device_id: c487b8f7237100e2c527cd5b7b436d69
+      entity_id: light.rgb_leds_living_room_desk
+      domain: light
+  mode: single
+- id: "1649085040324"
+  alias: Living Room Unoccupied
+  description: ""
+  trigger:
+    - type: not_occupied
+      platform: device
+      device_id: cbed1f0eb747fa8492521be061c640e2
+      entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_2f18f807_occupancy
+      domain: binary_sensor
+  condition: []
+  action:
+    - type: turn_off
+      device_id: c487b8f7237100e2c527cd5b7b436d69
+      entity_id: light.rgb_leds_living_room_desk
+      domain: light
+  mode: single
+- id: "1649168611943"
+  alias: MuteSync Meeting Active
+  description: ""
+  trigger:
+    - type: turned_on
+      platform: device
+      device_id: 3094c494c6979d8b65c190513c932d95
+      entity_id: binary_sensor.in_meeting
+      domain: binary_sensor
+  condition: []
+  action:
+    - type: turn_on
+      device_id: 2a5a8aff4b882678bb9f75e2ac36f168
+      entity_id: light.bulb_living_room_desk
+      domain: light
   mode: single

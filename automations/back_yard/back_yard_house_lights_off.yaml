@@ -14,5 +14,6 @@ action:
     target:
       entity_id: 
         switch.garage_man_door,
-        switch.back_yard_porch
+        switch.back_yard_porch,
+        switch.back_yard_shed
 mode: single

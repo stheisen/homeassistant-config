@@ -11,5 +11,5 @@ condition: []
 action:
   - service: switch.turn_off
     target:
-      entity_id: switch.plug_kitchen
+      entity_id: switch.outlet_kitchen
 mode: single

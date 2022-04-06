@@ -12,13 +12,13 @@ condition: []
 action:
   - service: script.light_transition_rgb
     data:
-      entity: light.light_garage_south
+      entity: light.bulb_garage_front_s
       brightnessLevel: 255
       duration: 10
       colorValue: [255, 255, 0]
   - service: script.light_transition_rgb
     data:
-      entity: light.light_garage_north
+      entity: light.bulb_garage_front_n
       brightnessLevel: 255
       duration: 10
       colorValue: [0, 0, 255]

@@ -12,8 +12,8 @@ condition: []
 action:
   - service: script.light_transition_temp
     data:
-      entity: light.light_garage_north,
-        light.light_garage_south
+      entity: light.bulb_garage_front_n,
+        light.bulb_garage_front_s
       brightnessLevel: 255
       colorValue: 371
 mode: single
