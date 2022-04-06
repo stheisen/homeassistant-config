@@ -24,3 +24,22 @@ light_transition_brightness:
         transition: "{{ duration | default (3) }}"
         brightness: "{{ brightnessLevel | default(0) }}"
         entity_id: "{{ entity }}"
+
+in_meeting:
+  sequence:
+    - service: scene.create
+      data:
+        scene_id: previous_livingroom_bulb_state
+        snapshot_entities:
+          - light.bulb_living_room_lamp_main
+    - service: light.turn_on
+      data:
+        brightness: 255
+        rgb_color: [200, 0, 0]
+        entity_id: light.bulb_living_room_lamp_main
+
+not_in_meeting:
+  sequence:
+    - service: scene.turn_on
+      target:
+        entity_id: scene.previous_livingroom_bulb_state

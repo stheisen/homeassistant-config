@@ -1,0 +1,21 @@
+# -----------------------------------------------------------------------------
+# Announce when JT arrives at the high school
+# -----------------------------------------------------------------------------
+id: "6b0a82b0-1706-4d8c-89f4-9defa049978d"
+alias: Alert - Justin Departed from the High School
+description: ""
+trigger:
+  - platform: zone
+    entity_id:
+      - person.justin
+    zone: zone.high_school
+    event: leave
+condition: []
+action:
+  service: notify.alexa_media
+  data:
+    message: JT has departed from the High School.
+    data:
+      type: tts
+    target: media_player.pc_dot
+mode: single
