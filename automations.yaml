@@ -1,103 +1,119 @@
-- id: "1647285858779"
+- id: '1647285858779'
   alias: Activate Dusk Lighting (Interior)
-  description: ""
+  description: ''
   trigger:
-    - platform: sun
-      event: sunset
-      offset: 00:30
+  - platform: sun
+    event: sunset
+    offset: 00:30
   condition: []
   action:
-    - data:
-        color_temp: 332
-        transition: 21
-        brightness: 255
-      service: light.turn_on
-      target:
-        device_id: 36abca42dce8f12bcaefbe36a3ec4699
+  - data:
+      color_temp: 332
+      transition: 21
+      brightness: 255
+    service: light.turn_on
+    target:
+      device_id: 36abca42dce8f12bcaefbe36a3ec4699
   mode: single
-- id: "1647308535017"
-  alias: "Activate Evening Lighting "
-  description: ""
+- id: '1647308535017'
+  alias: 'Activate Evening Lighting '
+  description: ''
   trigger:
-    - platform: time
-      at: "22:00:00"
+  - platform: time
+    at: '22:00:00'
   condition: []
   action:
-    - service: scene.turn_on
-      target:
-        entity_id: scene.evening_lighting
+  - service: scene.turn_on
+    target:
+      entity_id: scene.evening_lighting
   mode: single
-- id: "1647308770281"
+- id: '1647308770281'
   alias: Activate Night Light
-  description: ""
+  description: ''
   trigger:
-    - platform: time
-      at: "23:00:00"
+  - platform: time
+    at: '23:00:00'
   condition: []
   action:
-    - service: scene.turn_on
-      target:
-        entity_id: scene.night_light
+  - service: scene.turn_on
+    target:
+      entity_id: scene.night_light
   mode: single
-- id: "1647308844345"
+- id: '1647308844345'
   alias: Deactivate Night Light
-  description: ""
+  description: ''
   trigger:
-    - platform: time
-      at: 01:00:00
+  - platform: time
+    at: 01:00:00
   condition: []
   action:
-    - service: light.turn_off
-      data:
-        transition: 5
-      target:
-        device_id: 36abca42dce8f12bcaefbe36a3ec4699
+  - service: light.turn_off
+    data:
+      transition: 5
+    target:
+      device_id: 36abca42dce8f12bcaefbe36a3ec4699
   mode: single
-- id: "1649085009468"
+- id: '1649085009468'
   alias: Living Room Occupied
-  description: ""
+  description: ''
   trigger:
-    - type: occupied
-      platform: device
-      device_id: cbed1f0eb747fa8492521be061c640e2
-      entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_2f18f807_occupancy
-      domain: binary_sensor
+  - type: occupied
+    platform: device
+    device_id: cbed1f0eb747fa8492521be061c640e2
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_2f18f807_occupancy
+    domain: binary_sensor
   condition: []
   action:
-    - type: turn_on
-      device_id: c487b8f7237100e2c527cd5b7b436d69
-      entity_id: light.rgb_leds_living_room_desk
-      domain: light
+  - type: turn_on
+    device_id: c487b8f7237100e2c527cd5b7b436d69
+    entity_id: light.rgb_leds_living_room_desk
+    domain: light
   mode: single
-- id: "1649085040324"
+- id: '1649085040324'
   alias: Living Room Unoccupied
-  description: ""
+  description: ''
   trigger:
-    - type: not_occupied
-      platform: device
-      device_id: cbed1f0eb747fa8492521be061c640e2
-      entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_2f18f807_occupancy
-      domain: binary_sensor
+  - type: not_occupied
+    platform: device
+    device_id: cbed1f0eb747fa8492521be061c640e2
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_2f18f807_occupancy
+    domain: binary_sensor
   condition: []
   action:
-    - type: turn_off
-      device_id: c487b8f7237100e2c527cd5b7b436d69
-      entity_id: light.rgb_leds_living_room_desk
-      domain: light
+  - type: turn_off
+    device_id: c487b8f7237100e2c527cd5b7b436d69
+    entity_id: light.rgb_leds_living_room_desk
+    domain: light
   mode: single
-- id: "1649168611943"
-  alias: MuteSync Meeting Active
-  description: ""
+- id: '1649298457199'
+  alias: Turn on Garage Light
+  description: ''
   trigger:
-    - type: turned_on
-      platform: device
-      device_id: 3094c494c6979d8b65c190513c932d95
-      entity_id: binary_sensor.in_meeting
-      domain: binary_sensor
+  - type: motion
+    platform: device
+    device_id: 3663b9df3da8ba681d925bedf82a8694
+    entity_id: binary_sensor.third_reality_inc_3rms16bz_8103e7ff_ias_zone
+    domain: binary_sensor
   condition: []
   action:
-    - type: turn_on
-      device_id: 2a5a8aff4b882678bb9f75e2ac36f168
-      entity_id: light.bulb_living_room_desk
-      domain: light
+  - type: turn_on
+    device_id: 6e60eea6ab158e31b53b3931dfe8073f
+    entity_id: switch.garage_inside_lights
+    domain: switch
+  mode: single
+- id: '1649298482326'
+  alias: Turn off Garage Lights
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 3663b9df3da8ba681d925bedf82a8694
+    entity_id: binary_sensor.third_reality_inc_3rms16bz_8103e7ff_ias_zone
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 6e60eea6ab158e31b53b3931dfe8073f
+    entity_id: switch.garage_inside_lights
+    domain: switch
   mode: single

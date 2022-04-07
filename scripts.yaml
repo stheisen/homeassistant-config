@@ -25,7 +25,7 @@ light_transition_brightness:
         brightness: "{{ brightnessLevel | default(0) }}"
         entity_id: "{{ entity }}"
 
-in_meeting:
+meeting_active:
   sequence:
     - service: scene.create
       data:
@@ -38,7 +38,7 @@ in_meeting:
         rgb_color: [200, 0, 0]
         entity_id: light.bulb_living_room_lamp_main
 
-not_in_meeting:
+meeting_inactive:
   sequence:
     - service: scene.turn_on
       target:
