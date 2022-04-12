@@ -1,0 +1,20 @@
+# -----------------------------------------------------------------------------
+# Announce when the washing machine stops consuming power
+# -----------------------------------------------------------------------------
+id: "a3131ced-72d8-42fd-a93a-3c0494e59572"
+alias: Alert - Washing Machine is done
+description: ""
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.washing_machine_power
+    below: "3"
+    for: "00:02:00"
+condition: []
+action:
+  service: notify.alexa_media
+  data:
+    message: The washing machine has completed its cycle
+    data:
+      type: tts
+    target: media_player.pc_dot, media_player.kitchen, media_player.steven_s_echo
+mode: single
