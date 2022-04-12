@@ -68,6 +68,10 @@
     device_id: c487b8f7237100e2c527cd5b7b436d69
     entity_id: light.rgb_leds_living_room_desk
     domain: light
+  - type: turn_on
+    device_id: d7354c13dbdadc683fca01760538d21c
+    entity_id: light.shellyrgbw2_51bb85
+    domain: light
   mode: single
 - id: '1649085040324'
   alias: Living Room Unoccupied
@@ -83,6 +87,10 @@
   - type: turn_off
     device_id: c487b8f7237100e2c527cd5b7b436d69
     entity_id: light.rgb_leds_living_room_desk
+    domain: light
+  - type: turn_off
+    device_id: d7354c13dbdadc683fca01760538d21c
+    entity_id: light.shellyrgbw2_51bb85
     domain: light
   mode: single
 - id: '1649298457199'
@@ -112,6 +120,11 @@
     domain: binary_sensor
   condition: []
   action:
+  - delay:
+      hours: 0
+      minutes: 5
+      seconds: 0
+      milliseconds: 0
   - type: turn_off
     device_id: 6e60eea6ab158e31b53b3931dfe8073f
     entity_id: switch.garage_inside_lights
