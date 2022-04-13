@@ -1,0 +1,23 @@
+# -----------------------------------------------------------------------------
+# Actions to take when motion is no longer detected by the main motion sensor
+# located by the main entrance
+# -----------------------------------------------------------------------------
+id: "a3131ced-72d8-42fd-a93a-3c0494e59571"
+alias: Garage Motion Cleared
+description: ""
+trigger:
+  - platform: state
+    entity_id: binary_sensor.garage_main_motion_sensor_ias_zone
+    from: "on"
+    to: "off"
+condition: []
+action:
+  - delay:
+      hours: 0
+      minutes: 5
+      seconds: 0
+      milliseconds: 0
+  - service: switch.turn_off
+    target:
+      entity_id: switch.garage_inside_lights
+mode: single

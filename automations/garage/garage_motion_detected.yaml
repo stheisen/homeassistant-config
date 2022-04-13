@@ -1,0 +1,18 @@
+# -----------------------------------------------------------------------------
+# Actions to take when motion is detected by the main motion sensor 
+# located by the main entrance
+# -----------------------------------------------------------------------------
+id: "a3131ced-72d8-42fd-a93a-3c0494e59579"
+alias: Garage Motion Detected
+description: ""
+trigger:
+  - platform: state
+    entity_id: binary_sensor.garage_main_motion_sensor_ias_zone
+    from: "off"
+    to: "on"
+condition: []
+action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.garage_inside_lights
+mode: single
