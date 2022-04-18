@@ -1,0 +1,20 @@
+# -----------------------------------------------------------------------------
+# Actions to take when motion is detected in the living room 
+# -----------------------------------------------------------------------------
+id: "z3131ced-72d8-42fd-a93a-3c0494e59579"
+alias: Living Room Motion Detected
+description: ""
+trigger:
+  - platform: state
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_2f18f807_occupancy
+    from: "off"
+    to: "on"
+condition: []
+action:
+  - service: light.turn_on
+    target:
+      entity_id: light.rgb_leds_living_room_desk
+  - service: light.turn_on
+    target:
+      entity_id: light.rgb_leds_living_room_ent_center
+mode: single
