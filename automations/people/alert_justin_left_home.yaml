@@ -1,0 +1,20 @@
+# -----------------------------------------------------------------------------
+# Announce when JT leaves the house
+# -----------------------------------------------------------------------------
+id: "alert_justin_left_home"
+alias: Alert - Justin Left Home
+description: ""
+trigger:
+  - platform: state
+    entity_id:
+      - person.justin
+    from: "home"
+condition: []
+action:
+  service: notify.alexa_media
+  data:
+    message: JT has left the house.
+    data:
+      type: tts
+    target: media_player.pc_dot
+mode: single

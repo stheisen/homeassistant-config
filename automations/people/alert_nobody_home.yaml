@@ -1,0 +1,16 @@
+# -----------------------------------------------------------------------------
+# Send an alert when the house is empty
+# -----------------------------------------------------------------------------
+id: "alert_nobody_home"
+alias: Alert - Nobody is Home
+description: ""
+trigger:
+  - platform: state
+    entity_id: group.family
+    from: "not_home"
+condition: []
+action:
+  service: notify.mobile_app_black_tower
+  data:
+    message: "It seems that nobody is at the house"
+mode: single
