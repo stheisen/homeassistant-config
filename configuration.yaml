@@ -35,7 +35,7 @@ automation mine: !include_dir_list automations/
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
-group: !include_dir_named groups/
+group: !include groups.yaml
 
 # Custom Panels
 panel_custom:
