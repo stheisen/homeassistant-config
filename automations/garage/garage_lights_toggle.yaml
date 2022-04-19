@@ -1,0 +1,26 @@
+# -----------------------------------------------------------------------------
+# Toggle the state of the garage lights
+#
+# This was tricky, because this light has a motion switch associated with it
+# the shelly device is configured as "detached".  We want to change the lights
+# based on the state of the detached switch.  We do NOT need events for this,
+# we can use the state of the external switch.  HOWEVER, there is an entity
+# called "Input" that is default disabled that must be enabled.  
+#
+# This "input" entitiy can be used to detect state changes of the switch being 
+# use in detached mode.
+#
+# NOTE: I have the shelly's "POWER ON DEFAULT MODE" set to "Restore Last Mode"
+# -----------------------------------------------------------------------------
+id: "garage_lights_toggle"
+alias: Garage Lights Toggle
+description: ""
+trigger:
+  - platform: state
+    entity_id: binary_sensor.shelly25a_garage_inside_lights_input
+    to:
+action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.garage_inside_lights
+mode: single
