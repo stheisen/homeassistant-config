@@ -1,0 +1,18 @@
+# -----------------------------------------------------------------------------
+#
+# -----------------------------------------------------------------------------
+id: "garage_motion_disabled"
+alias: Garage Motion Disabled
+description: ""
+trigger:
+  - platform: event
+    event_type: shelly.click
+    event_data:
+      device: shellyswitch25-C45BBE79091F
+      channel: 1
+      click_type: single
+action:
+  - service: notify.mobile_app_black_tower
+    data:
+      message: "Garage lights double clicked!"
+mode: single
