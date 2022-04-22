@@ -1,0 +1,28 @@
+# -----------------------------------------------------------------------------
+# Actions to take when motion is NO LONGER detected in the living room
+# -----------------------------------------------------------------------------
+id: "living_room_motion_cleared"
+alias: Living Room Motion Cleared
+description: ""
+trigger:
+  - platform: state
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_2f18f807_occupancy
+    from: "on"
+    to: "off"
+condition: 
+  - condition: or
+    conditions: 
+      - condition: time
+        after: "23:00:00"
+        before: "07:00:00"
+      - condition: state
+        entity_id: group.family
+        state: "not_home"
+action:
+  - service: light.turn_off
+    target:
+      entity_id: light.rgb_leds_living_room_desk
+  - service: light.turn_off
+    target:
+      entity_id: light.rgb_leds_living_room_ent_center
+mode: single
