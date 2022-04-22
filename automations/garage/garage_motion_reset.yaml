@@ -1,15 +1,26 @@
 # -----------------------------------------------------------------------------
 # In case motion detection was disabled in the garage, and never turned back
-# on, this will re-enable motion detection
+# on, this will re-enable motion detection for the next day, make sure the
+# lights are off for the night and send a notification that this was done.
 # -----------------------------------------------------------------------------
 id: "garage_motion_disabled"
 alias: Garage Motion Disabled
 description: ""
 trigger:
   - platform: time
-    at: '01:00:00'
+    at: "01:00:00"
+condition:
+  - condition: state
+    entity_id: input_boolean.garage_motion_detection
+    state: "off"
 action:
   - service: input_boolean.turn_on
     target:
       entity_id: input_boolean.garage_motion_detection
+  - service: switch.turn_off
+    target:
+      entity_id: switch.garage_inside_lights
+  - service: notify.mobile_app_black_tower
+    data:
+      message: "Garage motion detection was left off, and is now re-enabled"
 mode: single
