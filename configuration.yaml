@@ -35,7 +35,7 @@ automation mine: !include_dir_list automations/
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
-#cover: !include_dir_list covers/
+cover: !include_dir_merge_list covers
 
 group: !include groups.yaml
 
