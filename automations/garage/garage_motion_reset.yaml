@@ -1,0 +1,15 @@
+# -----------------------------------------------------------------------------
+# In case motion detection was disabled in the garage, and never turned back
+# on, this will re-enable motion detection
+# -----------------------------------------------------------------------------
+id: "garage_motion_disabled"
+alias: Garage Motion Disabled
+description: ""
+trigger:
+  - platform: time
+    at: '01:00:00'
+action:
+  - service: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.garage_motion_detection
+mode: single

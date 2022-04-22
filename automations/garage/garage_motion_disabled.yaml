@@ -1,4 +1,12 @@
 # -----------------------------------------------------------------------------
+# Switch flip combination on the garage lighting SHelly switch can toggle an
+# input boolean that will indicate if the gargage lighiting motion switch should
+# be active or inactive.
+#
+# The on-off-on action on the switch will trigger this automation to determine
+# how to set the input boolean value. This input boolean value is then used in 
+# an automation for when the motion is cleared to determine if the lights can
+# be turned off
 #
 # -----------------------------------------------------------------------------
 id: "garage_motion_disabled"
@@ -12,7 +20,30 @@ trigger:
       channel: 1
       click_type: single
 action:
-  - service: notify.mobile_app_black_tower
-    data:
-      message: "Garage lights double clicked!"
+  - choose:
+    - alias: "If motion detection is turned on, then disable it"
+      conditions:
+        - condition: state
+          entity_id: input_boolean.garage_motion_detection
+          state: "on"
+      sequence:
+        - service: notify.alexa_media
+          data:
+            message: I have disabled motion detected lighting in the garage.
+            data:
+              type: tts
+            target: media_player.garage
+        - service: input_boolean.turn_off
+          target:
+            entity_id: input_boolean.garage_motion_detection
+    default:
+      - service: notify.alexa_media
+        data:
+          message: I have re-enabled motion detected lighting in the garage.
+          data:
+            type: tts
+          target: media_player.garage
+      - service: input_boolean.turn_on
+        target:
+          entity_id: input_boolean.garage_motion_detection
 mode: single

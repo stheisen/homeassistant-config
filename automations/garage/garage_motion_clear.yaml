@@ -10,7 +10,10 @@ trigger:
     entity_id: binary_sensor.garage_main_motion_sensor_ias_zone
     from: "on"
     to: "off"
-condition: []
+condition: 
+  - condition: state
+    entity_id: input_boolean.garage_motion_detection
+    state: "on"
 action:
   - delay:
       hours: 0
