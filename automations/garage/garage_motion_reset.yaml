@@ -3,8 +3,8 @@
 # on, this will re-enable motion detection for the next day, make sure the
 # lights are off for the night and send a notification that this was done.
 # -----------------------------------------------------------------------------
-id: "garage_motion_disabled"
-alias: Garage Motion Disabled
+id: "garage_motion_reset"
+alias: Garage Motion Reset
 description: ""
 trigger:
   - platform: time

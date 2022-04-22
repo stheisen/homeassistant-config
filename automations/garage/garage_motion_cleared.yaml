@@ -2,7 +2,7 @@
 # Actions to take when motion is no longer detected by the main motion sensor
 # located by the main entrance
 # -----------------------------------------------------------------------------
-id: "a3131ced-72d8-42fd-a93a-3c0494e59571"
+id: "garage_motion_cleared"
 alias: Garage Motion Cleared
 description: ""
 trigger:

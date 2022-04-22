@@ -2,7 +2,7 @@
 # Actions to take when motion is detected by the main motion sensor 
 # located by the main entrance
 # -----------------------------------------------------------------------------
-id: "a3131ced-72d8-42fd-a93a-3c0494e59579"
+id: "garage_motion_detected"
 alias: Garage Motion Detected
 description: ""
 trigger:
