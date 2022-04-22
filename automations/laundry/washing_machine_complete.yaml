@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 # Announce when the washing machine stops consuming power
 # -----------------------------------------------------------------------------
-id: "a3131ced-72d8-42fd-a93a-3c0494e59572"
+id: "washing_machine_complete"
 alias: Alert - Washing Machine is done
 description: ""
 trigger:

@@ -1,8 +1,8 @@
 # -----------------------------------------------------------------------------
 # Turn off the plug that powers the LED grape lights in the kitchen
 # -----------------------------------------------------------------------------
+id: "kitchen_plug_off"
 alias: Kitchen Plug - Off
-id: "cc67ba70-96c9-4487-8747-89629f72d502"
 description: ""
 trigger:
   - platform: time

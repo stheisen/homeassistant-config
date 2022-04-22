@@ -1,8 +1,8 @@
 # -----------------------------------------------------------------------------
 # Turn on the plug that powers the LED grape lights in the kitchen
 # -----------------------------------------------------------------------------
+id: "kitchen_plug_on"
 alias: Kitchen Plug - On
-id: "dbfe3e26-2282-49a7-a6d4-935cdfb1a1dd"
 description: ""
 trigger:
   - platform: sun
