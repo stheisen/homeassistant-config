@@ -13,8 +13,8 @@ condition: []
 action:
   service: notify.alexa_media
   data:
-    message: The washing machine has completed its cycle
+    message: "The washing machine has completed its cycle"
     data:
       type: tts
-    target: media_player.pc_dot, media_player.kitchen, media_player.steven_s_echo
+    target: group.media_players_interior
 mode: single
