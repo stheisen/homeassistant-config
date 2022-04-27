@@ -29,7 +29,7 @@ action:
       sequence:
         - service: notify.alexa_media
           data:
-            message: I have disabled motion detected lighting in the garage.
+            message: "I have disabled motion detected lighting in the garage."
             data:
               type: tts
             target: media_player.garage
@@ -39,7 +39,7 @@ action:
     default:
       - service: notify.alexa_media
         data:
-          message: I have re-enabled motion detected lighting in the garage.
+          message: "I have re-enabled motion detected lighting in the garage."
           data:
             type: tts
           target: media_player.garage
