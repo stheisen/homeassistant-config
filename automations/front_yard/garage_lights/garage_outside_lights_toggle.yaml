@@ -1,0 +1,35 @@
+# -----------------------------------------------------------------------------
+# Toggle the state of the outside garage lights
+#
+# The Shelly "input" entitiy must be enabled in order to be used to detect state 
+# changes of the switch being used in detached mode.
+#
+# NOTE: I have the shelly's "POWER ON DEFAULT MODE" set to "Restore Last Mode"
+# -----------------------------------------------------------------------------
+id: "garage_outside_lights_toggle"
+alias: Garage Outside Lights Toggle
+description: ""
+trigger:
+  - platform: state
+    entity_id: binary_sensor.shelly25a_garage_outside_lights_input
+    to:
+action:
+  - choose:
+    - alias: ""
+      conditions:
+        - condition: state
+          entity_id: light.bulb_garage_front_n
+          state: "on"
+      sequence:
+        - service: light.turn_off
+          target:
+            entity_id: 
+              - light.bulb_garage_front_n
+              - light.bulb_garage_front_s
+    default:
+        - service: light.turn_on
+          target:
+            entity_id: 
+              - light.bulb_garage_front_n
+              - light.bulb_garage_front_s
+mode: single
