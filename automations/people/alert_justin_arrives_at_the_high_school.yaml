@@ -14,8 +14,8 @@ condition: []
 action:
   service: notify.alexa_media
   data:
-    message: JT has arrived at the High School.
+    message: "JT has arrived at the High School."
     data:
       type: tts
-    target: media_player.pc_dot
+    target: media_player.living_room
 mode: single
