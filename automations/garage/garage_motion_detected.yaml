@@ -1,6 +1,8 @@
 # -----------------------------------------------------------------------------
 # Actions to take when motion is detected by the main motion sensor 
-# located by the main entrance
+# located by the main entrance.
+#
+# The actions are only take if motion detection is on
 # -----------------------------------------------------------------------------
 id: "garage_motion_detected"
 alias: Garage Motion Detected
@@ -10,7 +12,10 @@ trigger:
     entity_id: binary_sensor.garage_main_motion_sensor_ias_zone
     from: "off"
     to: "on"
-condition: []
+condition: 
+  - condition: state
+    entity_id: input_boolean.garage_motion_detection
+    state: "on"
 action:
   - service: switch.turn_on
     target:
