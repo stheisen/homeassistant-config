@@ -28,6 +28,8 @@ zeroconf:
 
 http: !include http.yaml
 
+group: !include groups.yaml
+
 tts: !include tts.yaml
 
 automation: !include automations.yaml
@@ -36,8 +38,8 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 
 cover: !include_dir_merge_list covers
+notify: !include_dir_merge_list notify/
 
-group: !include groups.yaml
 
 # Custom Panels
 panel_custom:

@@ -1,26 +1,26 @@
 # -----------------------------------------------------------------------------
-# Announce when the washing machine stops consuming power
+# Announce when the dryer temperature drops
 # -----------------------------------------------------------------------------
-id: "washing_machine_complete"
-alias: Alert - Washing Machine is done
+id: "dryer_complete"
+alias: Alert - Dryer is done
 description: ""
 trigger:
   - platform: numeric_state
-    entity_id: sensor.washing_machine_power
-    below: "3"
+    entity_id: sensor.dryer_temperature
+    below: "120"
     for: "00:02:00"
 condition: []
 action:
   - service: notify.alexa_media
     data:
-      message: "The washing machine has completed its cycle"
+      message: "The dryer is finishing up"
       data:
         type: tts
       target: group.media_players_interior
   - service: notify.pushover_st
-    data:    
-      title: "Washer is done!"
-      message: "The washer can be emptied now..."
+    data:
+      title: "Dryer is done!"
+      message: "The dryer can be emptied now. Happy folding!"
       data:
         sound: incoming
         priority: 0
