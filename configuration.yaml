@@ -41,7 +41,8 @@ tts: !include tts.yaml
 
 automation: !include automations.yaml
 automation mine: !include_dir_list automations/
-script: !include scripts.yaml
+script: !include_dir_named scripts/
+#script: !include scripts.yaml
 scene: !include scenes.yaml
 
 cover: !include_dir_merge_list covers
