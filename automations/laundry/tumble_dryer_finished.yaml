@@ -1,19 +1,25 @@
 # -----------------------------------------------------------------------------
-# Announce when the dryer temperature drops
+# Actions to take when the tumble dryer has been detected as finished
 # -----------------------------------------------------------------------------
-id: "dryer_complete"
-alias: Alert - Dryer is done
+id: "tumble_dryer_finished"
+alias: Tumble Dryer Finished
 description: ""
 trigger:
   - platform: numeric_state
-    entity_id: sensor.dryer_temperature
-    below: "120"
+    entity_id: sensor.tumble_dryer_temperature
+    below: "100"
     for: "00:02:00"
-condition: []
+condition: 
+  - condition: state
+    entity_id: input_boolean.tumble_dryer_status
+    state: "on"
 action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.tumble_dryer_status
   - service: notify.alexa_media
     data:
-      message: "The dryer is finishing up"
+      message: "The dryer has finished running"
       data:
         type: tts
       target: group.media_players_interior

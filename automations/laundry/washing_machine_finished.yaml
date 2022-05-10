@@ -1,16 +1,22 @@
 # -----------------------------------------------------------------------------
-# Announce when the washing machine stops consuming power
+# Actions to take when the washing machine has been detected as finished
 # -----------------------------------------------------------------------------
-id: "washing_machine_complete"
-alias: Alert - Washing Machine is done
+id: "washing_machine_finished"
+alias: Washing Machine Finished
 description: ""
 trigger:
   - platform: numeric_state
     entity_id: sensor.washing_machine_power
     below: "3"
     for: "00:02:00"
-condition: []
+condition: 
+  - condition: state
+    entity_id: input_boolean.washing_machine_status
+    state: "on"
 action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.washing_machine_status
   - service: notify.alexa_media
     data:
       message: "The washing machine has completed its cycle"
