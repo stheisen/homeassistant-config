@@ -26,6 +26,13 @@ system_health:
 webhook:
 zeroconf:
 
+input_number: 
+input_boolean: !include_dir_named input_boolean/
+input_select: 
+input_datetime: 
+input_text: 
+timer: 
+
 http: !include http.yaml
 
 group: !include groups.yaml
@@ -39,6 +46,7 @@ scene: !include scenes.yaml
 
 cover: !include_dir_merge_list covers
 notify: !include_dir_merge_list notify/
+
 
 
 # Custom Panels
