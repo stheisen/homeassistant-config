@@ -24,7 +24,7 @@ action:
     - alias: "If motion detection is turned on, then disable it"
       conditions:
         - condition: state
-          entity_id: input_boolean.garage_motion_detection
+          entity_id: input_boolean.garage_motion_detection_status
           state: "on"
       sequence:
         - service: notify.alexa_media
@@ -35,7 +35,7 @@ action:
             target: media_player.garage
         - service: input_boolean.turn_off
           target:
-            entity_id: input_boolean.garage_motion_detection
+            entity_id: input_boolean.garage_motion_detection_status
     default:
       - service: notify.alexa_media
         data:
@@ -45,5 +45,5 @@ action:
           target: media_player.garage
       - service: input_boolean.turn_on
         target:
-          entity_id: input_boolean.garage_motion_detection
+          entity_id: input_boolean.garage_motion_detection_status
 mode: single

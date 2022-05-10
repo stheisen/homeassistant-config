@@ -12,7 +12,7 @@ trigger:
     to: "off"
 condition: 
   - condition: state
-    entity_id: input_boolean.garage_motion_detection
+    entity_id: input_boolean.garage_motion_detection_status
     state: "on"
 action:
   - delay:

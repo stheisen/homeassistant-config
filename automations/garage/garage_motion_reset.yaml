@@ -11,12 +11,12 @@ trigger:
     at: "01:00:00"
 condition:
   - condition: state
-    entity_id: input_boolean.garage_motion_detection
+    entity_id: input_boolean.garage_motion_detection_status
     state: "off"
 action:
   - service: input_boolean.turn_on
     target:
-      entity_id: input_boolean.garage_motion_detection
+      entity_id: input_boolean.garage_motion_detection_status
   - service: switch.turn_off
     target:
       entity_id: switch.garage_inside_lights
