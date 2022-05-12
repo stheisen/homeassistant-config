@@ -1,0 +1,9 @@
+id: "house_unoccupied"
+alias: House Unoccupied
+trigger:
+  - platform: state
+    entity_id: group.family
+    from: "home"
+action:
+  service: script.house_unoccupied
+mode: single

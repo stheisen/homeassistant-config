@@ -1,0 +1,11 @@
+alias: Logan Home
+sequence:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.logan_home
+  - service: light.turn_on
+    entity_id: light.rgb_leds_logans_room
+  - service: notify.pushover_st
+    data:    
+      message: "Logan is home"
+      data:
+        sound: incoming

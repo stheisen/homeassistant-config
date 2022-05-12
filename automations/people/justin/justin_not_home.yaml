@@ -1,0 +1,9 @@
+id: "justin_not_home"
+alias: Justin not home
+trigger:
+  - platform: state
+    entity_id: person.justin
+    from: "home"
+action:
+  service: script.justin_not_home
+mode: single

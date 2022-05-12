@@ -1,0 +1,11 @@
+id: "justin_left_school"
+alias: Justin left school
+trigger:
+  - platform: zone
+    entity_id:
+      - person.justin
+    zone: zone.high_school
+    event: leave
+action:
+  service: script.justin_left_school
+mode: single

@@ -1,0 +1,4 @@
+name: Dylan
+id: dylan
+device_trackers:
+  - device_tracker.life360_dylan

@@ -1,0 +1,5 @@
+name: Logan
+id: logan
+user_id: db93db3c03a84c379aace6cdb08e12ef
+device_trackers:
+  - device_tracker.life360_logan

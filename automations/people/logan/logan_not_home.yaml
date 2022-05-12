@@ -1,0 +1,9 @@
+id: "logan_not_home"
+alias: Logan Not Home
+trigger:
+  - platform: state
+    entity_id: person.logan
+    from: "home"
+action:
+  service: script.logan_not_home
+mode: single

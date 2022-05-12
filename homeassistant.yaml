@@ -7,3 +7,21 @@ currency: USD
 temperature_unit: F
 external_url: !secret externalURL
 internal_url: !secret internalURL
+
+
+customize: 
+  person.steve:
+    entity_picture: !secret steveImageURL
+    friendly_name: Steve
+  person.ana:
+    entity_picture: !secret anaImageURL
+    friendly_name: Ana
+  person.dylan:
+    entity_picture: !secret dylanImageURL
+    friendly_name: Dylan
+  person.logan:
+    entity_picture: !secret loganImageURL
+    friendly_name: Logan
+  person.justin:
+    entity_picture: !secret justinImageURL
+    friendly_name: Justin

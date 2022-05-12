@@ -1,0 +1,4 @@
+name: Ana
+id: ana
+device_trackers:
+  - device_tracker.life360_ana_theisen

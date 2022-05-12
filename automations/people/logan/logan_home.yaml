@@ -1,0 +1,9 @@
+id: "logan_home"
+alias: Logan Home
+trigger:
+  - platform: state
+    entity_id: person.logan
+    to: "home"
+action:
+  service: script.logan_home
+mode: single

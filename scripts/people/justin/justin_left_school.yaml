@@ -1,0 +1,9 @@
+alias: Justin Left School
+sequence:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.justin_school
+  - service: notify.pushover_st
+    data:
+      message: "JT left the school"
+      data:
+        sound: incoming

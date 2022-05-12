@@ -1,9 +1,9 @@
 family:
-  - person.steve_theisen
-  - person.ana_theisen
+  - person.steve
+  - person.ana
   - person.dylan
   - person.justin
-  - person.logan_theisen
+  - person.logan
 
 media_players_interior:
   - media_player.dining_room
@@ -15,4 +15,3 @@ media_players_first_floor:
   - media_player.dining_room
   - media_player.kitchen
   - media_player.living_room
-

@@ -18,7 +18,6 @@ map:
 media_source:
 mobile_app:
 my:
-person:
 ssdp:
 stream:
 sun:
@@ -26,12 +25,14 @@ system_health:
 webhook:
 zeroconf:
 
-input_number: 
+person: !include_dir_list person/
+
+input_number:
 input_boolean: !include_dir_named input_boolean/
-input_select: 
-input_datetime: 
-input_text: 
-timer: 
+input_select:
+input_datetime:
+input_text:
+timer:
 
 http: !include http.yaml
 
@@ -42,13 +43,12 @@ tts: !include tts.yaml
 automation: !include automations.yaml
 automation mine: !include_dir_list automations/
 script: !include_dir_named scripts/
-#script: !include scripts.yaml
 scene: !include scenes.yaml
 
-cover: !include_dir_merge_list covers
+cover: !include_dir_merge_list covers/
 notify: !include_dir_merge_list notify/
 
-
+life360: !include life360.yaml
 
 # Custom Panels
 panel_custom:

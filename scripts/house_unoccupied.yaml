@@ -1,0 +1,4 @@
+alias: House Unoccupied
+sequence:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.house_occupied

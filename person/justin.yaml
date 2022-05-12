@@ -1,0 +1,4 @@
+name: Justin
+id: justin
+device_trackers:
+  - device_tracker.life360_jt

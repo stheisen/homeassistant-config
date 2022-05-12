@@ -1,0 +1,11 @@
+id: "justin_school"
+alias: Justin arrives at school
+trigger:
+  - platform: zone
+    entity_id:
+      - person.justin
+    zone: zone.high_school
+    event: enter
+action:
+  service: script.justin_school
+mode: single

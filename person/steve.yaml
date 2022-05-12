@@ -1,0 +1,7 @@
+# SURPRISE!
+#
+# Not configured here.  Since this is the OWNER user that setup the system
+# I let this live through the backend configuration.  To modify this user
+# you must CAREFULLY edit a file using the Terminal add-on
+#
+# config/.storage/person

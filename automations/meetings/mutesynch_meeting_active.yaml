@@ -8,7 +8,6 @@ trigger:
   - entity_id: binary_sensor.mutesync_daytona_in_meeting
     platform: state
     to: "on"
-condition: []
 action:
   - service: script.meeting_active
 mode: single

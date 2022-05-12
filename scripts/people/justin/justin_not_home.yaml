@@ -1,0 +1,9 @@
+alias: Justin Not Home
+sequence:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.justin_home
+  - service: notify.pushover_st
+    data:
+      message: "JT left the house"
+      data:
+        sound: incoming

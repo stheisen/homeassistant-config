@@ -1,0 +1,11 @@
+alias: Logan Not Home
+sequence:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.logan_home
+  - service: light.turn_off
+    entity_id: light.rgb_leds_logans_room
+  - service: notify.pushover_st
+    data:    
+      message: "Logan left the house"
+      data:
+        sound: incoming
