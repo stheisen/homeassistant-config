@@ -2,8 +2,6 @@ alias: Justin At School
 sequence:
   - service: input_boolean.turn_on
     entity_id: input_boolean.justin_school
-  - service: notify.pushover_st
+  - service: script.normal_priority_status_message
     data:
-      message: "JT is at school"
-      data:
-        sound: incoming
+      message: "JT has arrived at the High School"

@@ -4,8 +4,6 @@ sequence:
     entity_id: input_boolean.logan_home
   - service: light.turn_off
     entity_id: light.rgb_leds_logans_room
-  - service: notify.pushover_st
-    data:    
-      message: "Logan left the house"
-      data:
-        sound: incoming
+  - service: script.low_priority_status_message
+    data:
+      message: "Logan has left the house"
