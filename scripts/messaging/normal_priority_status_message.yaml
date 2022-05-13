@@ -1,0 +1,28 @@
+alias: Normal priority status message
+fields:
+  message:
+    name: Message
+    description: "The text of the message to be sent"
+    example: "Person 1 has left the house"
+sequence:
+  - service: notify.pushover_steve
+    data:
+      message: "{{ message }}"
+      data:
+        sound: incoming
+        priority: 0
+  # Were only going to make a smart speaker announcement if the house is occupied and awake
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.house_occupied
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.house_awake
+      state: 'on'
+  - service: notify.alexa_media
+    data:
+      message: "{{ message }}"
+      data:
+        type: tts
+      target: group.media_players_first_floor
