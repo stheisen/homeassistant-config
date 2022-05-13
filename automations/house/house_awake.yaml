@@ -1,5 +1,5 @@
-id: "house_asleep"
-alias: House Asleep
+id: "house_awake"
+alias: House Awake
 trigger:
   - platform: time
     at: '07:00:00'
