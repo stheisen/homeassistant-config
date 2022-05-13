@@ -1,0 +1,8 @@
+id: "house_asleep"
+alias: House Asleep
+trigger:
+  - platform: time
+    at: '23:30:00'
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.house_awake
