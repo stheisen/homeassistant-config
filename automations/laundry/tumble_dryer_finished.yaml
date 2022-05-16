@@ -1,6 +1,3 @@
-# -----------------------------------------------------------------------------
-# Actions to take when the tumble dryer has been detected as finished
-# -----------------------------------------------------------------------------
 id: "tumble_dryer_finished"
 alias: Tumble Dryer Finished
 description: ""
@@ -14,20 +11,5 @@ condition:
     entity_id: input_boolean.tumble_dryer_status
     state: "on"
 action:
-  - service: input_boolean.turn_off
-    target:
-      entity_id: input_boolean.tumble_dryer_status
-  - service: notify.alexa_media
-    data:
-      message: "The dryer has finished running"
-      data:
-        type: tts
-      target: group.media_players_interior
-  - service: notify.pushover_st
-    data:
-      title: "Dryer is done!"
-      message: "The dryer can be emptied now. Happy folding!"
-      data:
-        sound: incoming
-        priority: 0
+  service: script.tumble_dryer_finished
 mode: single
