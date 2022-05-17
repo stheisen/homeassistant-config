@@ -1,0 +1,10 @@
+alias: Initialize Media Volume
+sequence:
+  - service: media_player.volume_set
+    data:
+      entity_id: group.media_players_interior
+      volume_level: 0.3
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.garage
+      volume_level: 1.0

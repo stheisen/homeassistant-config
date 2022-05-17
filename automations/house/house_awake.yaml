@@ -2,7 +2,9 @@ id: "house_awake"
 alias: House Awake
 trigger:
   - platform: time
-    at: '07:00:00'
+    at: "07:00:00"
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.house_awake
+  - service: script.intitalize_volume
+mode: single
