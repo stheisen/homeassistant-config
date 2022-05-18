@@ -5,5 +5,6 @@ trigger:
     entity_id: group.family
     from: "home"
 action:
-  service: script.house_unoccupied
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.house_occupied
 mode: single
