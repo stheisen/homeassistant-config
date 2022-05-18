@@ -9,5 +9,14 @@ trigger:
     platform: state
     to: "on"
 action:
-  - service: script.meeting_active
+  - service: light.turn_on
+    data:
+      brightness: 255
+      rgb_color: [200, 0, 0]
+      entity_id: light.bulb_living_room_lamp_main
+  - service: light.turn_on
+    data:
+      brightness: 255
+      color_temp: 326
+      entity_id: light.bulb_living_room_desk
 mode: single

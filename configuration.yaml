@@ -42,7 +42,10 @@ tts: !include tts.yaml
 
 automation: !include automations.yaml
 automation mine: !include_dir_list automations/
+
+# Scripts priciple: These are actions that are written for the reuse by more than one automation
 script: !include_dir_named scripts/
+
 scene: !include scenes.yaml
 
 cover: !include_dir_merge_list covers/

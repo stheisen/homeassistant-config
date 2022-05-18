@@ -1,5 +1,0 @@
-alias: Meeting Inactive
-sequence:
-  - service: scene.turn_on
-    target:
-      entity_id: scene.previous_livingroom_bulb_state

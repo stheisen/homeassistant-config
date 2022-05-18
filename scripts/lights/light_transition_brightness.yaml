@@ -1,4 +1,4 @@
-alias: Light change brigtness over time
+alias: Light change brightness over time
 sequence:
   - service: light.turn_on
     data_template:
