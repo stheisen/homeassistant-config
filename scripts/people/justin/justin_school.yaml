@@ -1,7 +1,0 @@
-alias: Justin At School
-sequence:
-  - service: input_boolean.turn_on
-    entity_id: input_boolean.justin_school
-  - service: script.normal_priority_status_message
-    data:
-      message: "JT has arrived at the High School"

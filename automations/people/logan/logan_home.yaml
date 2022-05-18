@@ -5,5 +5,11 @@ trigger:
     entity_id: person.logan
     to: "home"
 action:
-  service: script.logan_home
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.logan_home
+  - service: light.turn_on
+    entity_id: light.rgb_leds_logans_room
+  - service: script.low_priority_status_message
+    data:
+      message: "Logan is home"
 mode: single

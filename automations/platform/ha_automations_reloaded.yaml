@@ -1,0 +1,9 @@
+id: "ha_automations_reloaded"
+alias: "Home Assistant Automations Reloaded"
+trigger:
+  - platform: event
+    event_type: automation_reloaded
+action:
+  - service: script.low_priority_status_message
+    data:
+      message: "Automations were reloaded at: {{ as_timestamp(now())|timestamp_custom('%b %d %Y - %I:%M:%S %p',now()) }} local"

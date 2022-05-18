@@ -8,5 +8,7 @@ trigger:
     for: "00:00:30"
 condition: []
 action:
-  service: script.tumble_dryer_started
+  - service: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.tumble_dryer_status
 mode: single

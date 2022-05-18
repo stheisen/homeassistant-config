@@ -5,5 +5,9 @@ trigger:
     entity_id: person.justin
     from: "home"
 action:
-  service: script.justin_not_home
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.justin_home
+  - service: script.low_priority_status_message
+    data:
+      message: "JT has left the house"
 mode: single

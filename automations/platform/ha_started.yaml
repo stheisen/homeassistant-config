@@ -1,0 +1,9 @@
+id: "ha_started"
+alias: "Home Assistant Started"
+trigger:
+  - platform: homeassistant
+    event: start
+action:
+  - service: script.low_priority_status_message
+    data:
+      message: "Home Assistant started at: {{ as_timestamp(now())|timestamp_custom('%b %d %Y - %I:%M:%S %p',now()) }} local"
