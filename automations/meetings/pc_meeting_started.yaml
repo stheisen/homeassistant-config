@@ -1,0 +1,28 @@
+id: "pc_meeting_started"
+alias: PC Meeting Started
+description: ""
+trigger:
+  - entity_id: binary_sensor.mutesync_daytona_in_meeting
+    platform: state
+    to: "on"
+action:
+  # Create a scene to save (snapshot) the previous states of the light bulbs in the room
+  - service: scene.create
+    data:
+      scene_id: pre_meeting_livingroom_bulb_state
+      snapshot_entities:
+        - light.bulb_living_room_lamp_main
+        - light.bulb_living_room_desk
+  # Set the color of the main lamp to something that tells people a meeting is active
+  - service: light.turn_on
+    data:
+      brightness: 255
+      rgb_color: [200, 0, 0]
+      entity_id: light.bulb_living_room_lamp_main
+  # turn on and set the color of a light that brightens face(s) for the camera
+  - service: light.turn_on
+    data:
+      brightness: 255
+      color_temp: 326
+      entity_id: light.bulb_living_room_desk
+mode: single

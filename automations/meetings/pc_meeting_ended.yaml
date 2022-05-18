@@ -1,0 +1,13 @@
+id: "pc_meeting_ended"
+alias: PC Meeting Ended
+description: ""
+trigger:
+  - entity_id: binary_sensor.mutesync_daytona_in_meeting
+    platform: state
+    to: "off"
+action:
+  # Restore the lights in the rooom to the state they were in before the meeting
+  - service: scene.turn_on
+    target:
+      entity_id: scene.pre_meeting_livingroom_bulb_state
+mode: single
