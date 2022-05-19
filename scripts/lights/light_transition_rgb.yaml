@@ -1,8 +1,0 @@
-alias: Light tranistion RGB color over time period
-sequence:
-  - service: light.turn_on
-    data_template:
-      transition: "{{ duration | default (3) }}"
-      brightness: "{{ brightnessLevel | default(255) }}"
-      rgb_color: "{{ colorValue }}"
-      entity_id: "{{ entity }}"

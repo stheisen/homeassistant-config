@@ -1,7 +1,0 @@
-alias: Light change brightness over time
-sequence:
-  - service: light.turn_on
-    data_template:
-      transition: "{{ duration | default (3) }}"
-      brightness: "{{ brightnessLevel | default(0) }}"
-      entity_id: "{{ entity }}"
