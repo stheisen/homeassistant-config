@@ -1,0 +1,13 @@
+alias: Lowest priority status message
+fields:
+  message:
+    name: Message
+    description: "The text of the message to be sent"
+    example: "Person 1 has left the house"
+sequence:
+  - service: notify.pushover_steve
+    data:
+      message: "{{ message }}"
+      data:
+        sound: incoming
+        priority: -1
