@@ -1,0 +1,13 @@
+id: "master_bedroom_lighting_evening"
+alias: Master Bedroom Lighting Evening
+trigger:
+  - platform: time
+    at: "21:45:00"
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.bulb_master_lamp_e
+      brightness: 85
+      rgb_color: [255, 0, 191]
+      transition: 10
+mode: single

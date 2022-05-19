@@ -1,0 +1,10 @@
+id: "master_bedroom_lighting_off"
+alias: Master Bedroom Lighting Off
+trigger:
+  - platform: time
+    at: "02:00:00"
+action:
+  - service: light.turn_off
+    data:
+      entity_id: light.bulb_master_lamp_e
+mode: single

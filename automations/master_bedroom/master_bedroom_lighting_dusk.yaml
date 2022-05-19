@@ -1,0 +1,14 @@
+id: "master_bedroom_lighting_dusk"
+alias: Master Bedroom Lighting Dusk
+trigger:
+  - platform: sun
+    event: sunset
+    offset: 00:10
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.bulb_master_lamp_e
+      brightness: 255
+      rgb_color: [255, 218, 109]
+      transition: 30
+mode: single
