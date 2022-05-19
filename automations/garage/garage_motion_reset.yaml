@@ -20,7 +20,7 @@ action:
   - service: switch.turn_off
     target:
       entity_id: switch.garage_inside_lights
-  - service: notify.mobile_app_black_tower
+  - service: script.low_priority_status_message
     data:
-      message: "Garage motion detection was left off, and is now re-enabled"
+      message: "I have re-enabled motion detected lighting in the garage." 
 mode: single

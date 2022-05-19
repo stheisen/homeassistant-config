@@ -1,9 +1,15 @@
 alias: Normal priority status message
+variables:
+      default_media_player_target: group.media_players_first_floor
 fields:
   message:
-    name: Message
+    name: message
     description: "The text of the message to be sent"
-    example: "Jeff Gordon has left the house"
+    example: "The laundry is ready to be rotated"
+  media_player_target:
+    name: media_player_target
+    description: "The text of the message to be sent"
+    example: group.media_players_first_floor
 sequence:
   - service: notify.pushover_steve
     data:
@@ -25,4 +31,4 @@ sequence:
       message: "{{ message }}"
       data:
         type: tts
-      target: group.media_players_first_floor
+      target: "{{ media_player_target | default(default_media_player_target) }}"

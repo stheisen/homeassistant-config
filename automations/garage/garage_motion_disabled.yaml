@@ -27,22 +27,18 @@ action:
           entity_id: input_boolean.garage_motion_detection_status
           state: "on"
       sequence:
-        - service: notify.alexa_media
+        - service: script.normal_priority_status_message
           data:
-            message: "I have disabled motion detected lighting in the garage."
-            data:
-              type: tts
-            target: media_player.garage
+            message: "I have disabled motion detected lighting in the garage." 
+            media_player_target: media_player.garage    
         - service: input_boolean.turn_off
           target:
             entity_id: input_boolean.garage_motion_detection_status
     default:
-      - service: notify.alexa_media
+      - service: script.normal_priority_status_message
         data:
-          message: "I have re-enabled motion detected lighting in the garage."
-          data:
-            type: tts
-          target: media_player.garage
+          message: "I have re-enabled motion detected lighting in the garage." 
+          media_player_target: media_player.garage    
       - service: input_boolean.turn_on
         target:
           entity_id: input_boolean.garage_motion_detection_status

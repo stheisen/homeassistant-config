@@ -12,4 +12,5 @@ action:
   - service: script.normal_priority_status_message
     data:
       message: "JT has left the High School"
+      mediaPlayer_target: media_player.garage
 mode: single
