@@ -1,0 +1,12 @@
+id: "landscape_lights_off"
+alias: Front Yard Landscape Lights - Off
+description: "Turn off the landscapping flood lights"
+trigger:
+  - platform: sun
+    event: sunrise
+    offset: 00:10
+action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.front_yard_outlets
+mode: single

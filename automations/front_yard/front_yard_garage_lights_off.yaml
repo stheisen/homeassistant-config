@@ -1,0 +1,13 @@
+id: "front_yard_garage_lights_off"
+alias: Front Yard Garage Lights - Off
+description: ""
+trigger:
+  - platform: sun
+    event: sunrise
+    offset: 00:10
+condition: []
+action:
+  - service: light.turn_off
+    target:
+      entity_id: light.bulb_garage_front_n, light.bulb_garage_front_s
+mode: single

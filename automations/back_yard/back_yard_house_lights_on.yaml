@@ -1,7 +1,4 @@
-# -----------------------------------------------------------------------------
-# Activate the backyard house lights.  
-# -----------------------------------------------------------------------------
-id: "b9a0885f-5dd4-4be2-91ff-df96af5b86cb"
+id: "back_yard_house_lights_on"
 alias: Back Yard House Lights - On
 description: ""
 trigger:

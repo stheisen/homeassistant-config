@@ -6,26 +6,32 @@
 #
 # NOTE: I have the shelly's "POWER ON DEFAULT MODE" set to "Restore Last Mode"
 # -----------------------------------------------------------------------------
-id: "garage_outside_lights_toggle"
-alias: Garage Outside Lights Toggle
-description: ""
+id: "front_yard_garage_lights_toggle"
+alias: Front Yard Garage Lights - Toggle
+description: "A light switch in the garage toggles the state of the garage carraige lights"
 trigger:
   - platform: state
     entity_id: binary_sensor.shelly25a_garage_outside_lights_input
     to:
 action:
   - choose:
-    - alias: ""
+      # If one of the two carraige lights are on, then turn off the lights.
       conditions:
-        - condition: state
-          entity_id: light.bulb_garage_front_n
-          state: "on"
+        - condition: or
+          conditions:
+            - condition: state
+              entity_id: light.bulb_garage_front_n
+              state: "on"
+            - condition: state
+              entity_id: light.bulb_garage_front_s
+              state: "on"
       sequence:
         - service: light.turn_off
           target:
             entity_id: 
               - light.bulb_garage_front_n
               - light.bulb_garage_front_s
+    # Otherwise, turn the lights on
     default:
         - service: light.turn_on
           target:

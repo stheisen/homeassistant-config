@@ -1,7 +1,4 @@
-# -----------------------------------------------------------------------------
-# Deactivate the backyard house lights.
-# -----------------------------------------------------------------------------
-id: "7d5efd56-d07f-4c31-aea5-affead46dfb0"
+id: "back_yard_house_lights_off"
 alias: Back Yard House Lights - Off
 description: ""
 trigger:

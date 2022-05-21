@@ -1,0 +1,12 @@
+id: "landscape_lights_on"
+alias: Front Yard Landscape Lights - On
+description: "Turn on the landscapping flood lights"
+trigger:
+  - platform: sun
+    event: sunset
+    offset: 00:15
+action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.front_yard_outlets
+mode: single
