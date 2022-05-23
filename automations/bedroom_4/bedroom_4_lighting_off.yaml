@@ -1,0 +1,10 @@
+id: "bedroom_4_lighting_off"
+alias: Bedroom 4 Lighting Off
+trigger:
+  - platform: time
+    at: "00:00:00"
+action:
+  - service: light.turn_off
+    data:
+      entity_id: light.rgb_leds_logans_room
+mode: single

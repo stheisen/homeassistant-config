@@ -1,0 +1,16 @@
+id: "bedroom_4_lighting_evening"
+alias: Bedroom 4 Lighting Evening
+trigger:
+  - platform: time
+    at: "22:30:00"
+condition:
+  - condition: state
+    entity_id: input_boolean.logan_home
+    state: "on"
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.rgb_leds_logans_room
+      brightness: 85
+      transition: 10
+mode: single
