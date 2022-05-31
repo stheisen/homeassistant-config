@@ -1,0 +1,31 @@
+id: unavailable_entities_notification
+alias: "Unavailable Entities Notification"
+description: "Create persistent notification if there are unavailable entities, dismiss if none."
+mode: restart
+trigger:
+  - platform: state
+    entity_id: sensor.unavailable_entities
+    to: ~
+condition:
+  - condition: template
+    value_template: >
+      {{ is_number(trigger.from_state.state)
+          and is_number(trigger.to_state.state) }}
+action:
+  - choose:
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.unavailable_entities
+          below: 1
+      sequence:
+        - service: script.low_priority_status_message
+          data:
+            message: "All entities are now available"
+    default:
+      - service: script.normal_priority_status_message
+        data:
+          title: "Unavailable Entities"
+          message: >
+            - 'The following entities are unavailble'
+            - {{ expand(state_attr('sensor.unavailable_entities','entity_id'))
+                  |map(attribute='entity_id')|join('\n- ') }}

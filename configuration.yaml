@@ -51,6 +51,7 @@ scene: !include scenes.yaml
 cover: !include_dir_merge_list covers/
 notify: !include_dir_merge_list notify/
 
+template: !include templates/sensors.yaml
 life360: !include life360.yaml
 
 # Custom Panels
@@ -60,4 +61,3 @@ panel_custom:
     sidebar_title: Supervisor
     sidebar_icon: mdi:home-assistant # https://materialdesignicons.com/
     module_url: /local/panel-redirect.js # 'local' is '/config/www/'
-

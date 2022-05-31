@@ -1,0 +1,11 @@
+id: 'ha_os_update_available'
+alias: 'HA Update OS Update Available Notification'
+trigger:
+  - platform: state
+    entity_id: update.home_assistant_operating_system_update
+    from: "off"
+    to: "on"
+action:
+- service: script.low_priority_status_message
+  data:
+    message: "HA OS Update became Available at: {{ as_timestamp(now())|timestamp_custom('%b %d %Y - %I:%M:%S %p',now()) }} local"

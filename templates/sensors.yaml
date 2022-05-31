@@ -1,0 +1,33 @@
+- sensor:
+    - name: "Unavailable Entities"
+      unique_id: unavailable_entities
+      icon: "{{ 'mdi:alert-circle' if states('sensor.unavailable_entities')|int(0) > 0 else 'mdi:check-circle' }}"
+      unit_of_measurement: entities
+      state: >
+        {% if state_attr('sensor.unavailable_entities','entity_id') != none %}
+          {{ state_attr('sensor.unavailable_entities','entity_id') | count }}
+        {% endif %}
+      attributes:
+        entity_id: >
+          {% if state_attr('group.ignored_unavailable_entities','entity_id') != none %}
+            {% set ignore_seconds = 60 %}
+            {% set ignore_ts = (now().timestamp() - ignore_seconds)|as_datetime %}
+            {% set entities = states
+                              |rejectattr('domain','in',['group','button','automation','script'])
+                              |rejectattr('entity_id','search','samsung_tablet')
+                              |rejectattr('entity_id','search','media_player')
+                              |rejectattr('entity_id','search','roku_')
+                              |rejectattr('entity_id','search','_charger_type')
+                              |rejectattr('entity_id','search','binary_sensor.updater')
+                              |selectattr('state','in',['unavailable','none'])|list %}
+            {% set buttons = states.button|selectattr('state','eq','unavailable')|list %}
+            {{ (entities + buttons)
+              |rejectattr('entity_id','in',state_attr('group.ignored_unavailable_entities','entity_id'))
+              |rejectattr('last_changed','ge',ignore_ts)
+              |map(attribute='entity_id')|list }}
+          {% endif %}
+
+- binary_sensor:
+    - name: "Is Sunny"
+      unique_id: is_sunny
+      state: "{{ is_state('weather.kakr_daynight', 'sunny') and state_attr('sun.sun', 'elevation') > 0 }}"
