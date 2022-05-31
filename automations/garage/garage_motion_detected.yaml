@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Actions to take when motion is detected by the main motion sensor 
+# Actions to take when motion is detected by the main motion sensor
 # located by the main entrance.
 #
 # The actions are only take if motion detection is on
@@ -12,10 +12,31 @@ trigger:
     entity_id: binary_sensor.garage_main_motion_sensor_ias_zone
     from: "off"
     to: "on"
-condition: 
-  - condition: state
-    entity_id: input_boolean.garage_motion_detection_status
-    state: "on"
+condition:
+  # If one of the following AND conditions are true, then turn on the lights
+  condition: or
+  conditions:
+    # If motions detection is on, the garage door is closed
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: input_boolean.garage_motion_detection_status
+          state: "on"
+        - condition: state
+          entity_id: binary_sensor.garage_door
+          state: "on"
+    # If motions detection is on, the garage door is open, and it is NOT sunny
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: input_boolean.garage_motion_detection_status
+          state: "on"
+        - condition: state
+          entity_id: binary_sensor.garage_door
+          state: "off"
+        - condition: state
+          entity_id: binary_sensor.is_sunny
+          state: "off"
 action:
   - service: switch.turn_on
     target:
