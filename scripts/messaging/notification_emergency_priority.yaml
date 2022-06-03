@@ -1,0 +1,13 @@
+alias: Notification - Emergency priority
+fields:
+  message:
+    name: Message
+    description: "The text of the message to be sent"
+    example: "There is water on the bathroom floor"
+sequence:
+  - service: notify.pushover_steve
+    data:
+      message: "{{ message }}"
+      data:
+        sound: incoming
+        priority: 2

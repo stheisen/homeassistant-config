@@ -1,4 +1,4 @@
-alias: Low priority status message
+alias: Notification - Low priority
 fields:
   message:
     name: Message
@@ -10,4 +10,4 @@ sequence:
       message: "{{ message }}"
       data:
         sound: incoming
-        priority: 0
+        priority: -1

@@ -7,7 +7,7 @@ trigger:
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.justin_home
-  - service: script.low_priority_status_message
+  - service: script.notification_low_priority
     data:
       message: "JT is home"
 mode: single

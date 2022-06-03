@@ -1,0 +1,13 @@
+alias: Notification - High priority
+fields:
+  message:
+    name: Message
+    description: "The text of the message to be sent"
+    example: "The garage door has been left open"
+sequence:
+  - service: notify.pushover_steve
+    data:
+      message: "{{ message }}"
+      data:
+        sound: incoming
+        priority: 1

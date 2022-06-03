@@ -9,8 +9,11 @@ trigger:
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.justin_school
-  - service: script.normal_priority_status_message
+  - service: script.notification_normal_priority
     data:
       message: "JT has left the High School"
-      mediaPlayer_target: media_player.garage
+  - service: script.announcement_normal_priority
+    data:
+      message: "JT has left the High School"
+      media_player_target: media_player.living_room
 mode: single

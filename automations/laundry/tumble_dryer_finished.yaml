@@ -25,7 +25,10 @@ action:
         - service:  input_boolean.turn_off
           target:
             entity_id: input_boolean.washing_machine_waiting_on_dryer
-        - service: script.normal_priority_status_message
+        - service: script.notification_normal_priority
+          data:
+            message: "The laundry is ready to be rotated."
+        - service: script.announcement_normal_priority
           data:
             message: "The laundry is ready to be rotated."
     # If the washer is running, then set a helper that the dryer is waiting
@@ -45,7 +48,10 @@ action:
         entity_id: input_boolean.washing_machine_status
         state: 'off'
       sequence:
-        - service: script.normal_priority_status_message
+        - service: script.notification_normal_priority
+          data:
+            message: "The clothes in the dryer are done, I do not see anything in the washing machine."
+        - service: script.announcement_normal_priority
           data:
             message: "The clothes in the dryer are done, I do not see anything in the washing machine."
 mode: single

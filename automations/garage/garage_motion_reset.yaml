@@ -20,7 +20,7 @@ action:
   - service: switch.turn_off
     target:
       entity_id: switch.garage_inside_lights
-  - service: script.low_priority_status_message
+  - service: script.notification_low_priority
     data:
       message: "I have re-enabled motion detected lighting in the garage." 
 mode: single

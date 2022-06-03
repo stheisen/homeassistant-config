@@ -6,6 +6,6 @@ trigger:
     from: "off"
     to: "on"
 action:
-- service: script.low_priority_status_message
+- service: script.notification_normal_priority
   data:
     message: "HA OS Update became Available at: {{ as_timestamp(now())|timestamp_custom('%b %d %Y - %I:%M:%S %p',now()) }} local"

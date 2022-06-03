@@ -1,11 +1,11 @@
-id: 'ha_core_update_available'
-alias: 'HA Update Core Update Available Notification'
+id: "ha_core_update_available"
+alias: "HA Update Core Update Available Notification"
 trigger:
   - platform: state
     entity_id: update.home_assistant_core_update
     from: "off"
     to: "on"
 action:
-- service: script.low_priority_status_message
-  data:
-    message: "HA Core Update became Available at: {{ as_timestamp(now())|timestamp_custom('%b %d %Y - %I:%M:%S %p',now()) }} local"
+  - service: script.notification_high_priority
+    data:
+      message: "HA Core Update became Available at: {{ as_timestamp(now())|timestamp_custom('%b %d %Y - %I:%M:%S %p',now()) }} local"

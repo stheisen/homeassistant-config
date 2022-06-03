@@ -21,21 +21,23 @@ trigger:
       click_type: single
 action:
   - choose:
+    # If motion detection is turned on, then disable it
     - alias: "If motion detection is turned on, then disable it"
       conditions:
         - condition: state
           entity_id: input_boolean.garage_motion_detection_status
           state: "on"
       sequence:
-        - service: script.normal_priority_status_message
+        - service: script.announcement_normal_priority
           data:
             message: "I have disabled motion detected lighting in the garage." 
             media_player_target: media_player.garage    
         - service: input_boolean.turn_off
           target:
             entity_id: input_boolean.garage_motion_detection_status
+    # Otherwise, disable motion detection
     default:
-      - service: script.normal_priority_status_message
+      - service: script.announcement_normal_priority
         data:
           message: "I have re-enabled motion detected lighting in the garage." 
           media_player_target: media_player.garage    

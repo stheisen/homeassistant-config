@@ -4,6 +4,6 @@ trigger:
   - platform: event
     event_type: automation_reloaded
 action:
-  - service: script.lowest_priority_status_message
+  - service: script.notification_low_priority
     data:
       message: "Automations were reloaded at: {{ as_timestamp(now())|timestamp_custom('%b %d %Y - %I:%M:%S %p',now()) }} local"

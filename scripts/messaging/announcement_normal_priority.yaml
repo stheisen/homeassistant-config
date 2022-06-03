@@ -1,6 +1,6 @@
-alias: Normal priority status message
+alias: Announcement
 variables:
-      default_media_player_target: group.media_players_first_floor
+  default_media_player_target: group.media_players_first_floor
 fields:
   message:
     name: message
@@ -11,12 +11,11 @@ fields:
     description: "The text of the message to be sent"
     example: group.media_players_first_floor
 sequence:
-  - service: notify.pushover_steve
+  - service: logbook.log
     data:
-      message: "{{ message }}"
-      data:
-        sound: incoming
-        priority: 0
+      name: Announcement
+      message: '"{{ message }}" played on: {{ media_player_target | default(default_media_player_target) }}'
+      domain: media_player
   # Were only going to make a smart speaker announcement if the house is occupied and awake
   - condition: and
     conditions:
