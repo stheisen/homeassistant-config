@@ -1,0 +1,33 @@
+id: "living_room_light_toggle"
+alias: Living Room Lights - Toggle
+description: ""
+trigger:
+  - platform: state
+    entity_id: binary_sensor.switch_living_room_lamp_outlet_input
+    to:
+action:
+  - choose:
+      # If one of the two lights in the lamp are on, then turn off the lights.
+      conditions:
+        - condition: or
+          conditions:
+            - condition: state
+              entity_id: light.bulb_living_room_desk
+              state: "on"
+            - condition: state
+              entity_id: light.bulb_living_room_lamp_main
+              state: "on"
+      sequence:
+        - service: light.turn_off
+          target:
+            entity_id:
+              - light.bulb_living_room_lamp_main
+              - light.bulb_living_room_desk
+    # Otherwise, turn the lights on
+    default:
+      - service: light.turn_on
+        target:
+          entity_id:
+            - light.bulb_living_room_lamp_main
+            - light.bulb_living_room_desk
+mode: single
