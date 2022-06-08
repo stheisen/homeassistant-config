@@ -1,0 +1,19 @@
+id: "network_slow_internet_speed"
+alias: Network Slow Internet Speed
+description: ""
+# Note that multiple triggers below threshold do NOT refire the automation. A value
+# must go above threshold and back below to restart the automation.  If the automation
+# remains in a triggered status for the threshold, the action will kick in.
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.speedtest_download
+    below: 210
+    for: "00:55:00"
+action:
+  - service: script.notification_high_priority
+    data:
+      message: "Internet download speeds have been low for the past hour. Last measurement: {{ states('sensor.speedtest_download') }} Mbps, from {{ state_attr('sensor.speedtest_download', 'server_name') }} "
+  - service: script.announcement_normal_priority
+    data:
+      message: "Over the last hour the internet dowload speeds have been slow. Last measurement was {{ states('sensor.speedtest_download') }} MegaBits Per Second. Please check the connection status."
+mode: single

@@ -1,0 +1,39 @@
+alias: Announcement with Bell
+variables:
+  default_media_player_target: group.media_players_first_floor
+fields:
+  message:
+    name: message
+    description: "The text of the message to be sent"
+    example: "The laundry is ready to be rotated"
+  media_player_target:
+    name: media_player_target
+    description: "The text of the message to be sent"
+    example: group.media_players_first_floor
+sequence:
+  - service: notify.alexa_media
+    data:
+      message: "<audio src='https://v3.jovo.tech/audio/5mhEaKdo-ringingbell.mp3'/>"
+      data:
+        type: tts
+      target: "{{ media_player_target | default(default_media_player_target) }}"
+  # - service: logbook.log
+  #   data:
+  #     name: Announcement
+  #     message: '"{{ message }}" played on: {{ media_player_target | default(default_media_player_target) }}'
+  #     domain: media_player
+  # # Were only going to make a smart speaker announcement if the house is occupied and awake
+  # - condition: and
+  #   conditions:
+  #     - condition: state
+  #       entity_id: input_boolean.house_occupied
+  #       state: "on"
+  #     - condition: state
+  #       entity_id: input_boolean.house_awake
+  #       state: "on"
+  # - service: notify.alexa_media
+  #   data:
+  #     message: "{{ message }}"
+  #     target: "{{ media_player_target | default(default_media_player_target) }}"
+  #     data:
+  #       type: tts
