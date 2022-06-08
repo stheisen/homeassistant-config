@@ -8,8 +8,7 @@ temperature_unit: F
 external_url: !secret externalURL
 internal_url: !secret internalURL
 
-
-customize: 
+customize:
   person.steve:
     entity_picture: !secret steveImageURL
     friendly_name: Steve
