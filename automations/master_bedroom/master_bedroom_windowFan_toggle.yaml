@@ -1,0 +1,15 @@
+id: "master_bedroom_windowFan_toggle"
+alias: Master Bedroom - Window Fan Toggle
+trigger:
+  - platform: time
+    at: "05:00:00"
+action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.outlet_3
+  - delay:
+      seconds: 10
+  - service: switch.turn_on
+    target:
+      entity_id: switch.outlet_3
+mode: single
