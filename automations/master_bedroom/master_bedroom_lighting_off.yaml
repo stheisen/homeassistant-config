@@ -1,5 +1,5 @@
 id: "master_bedroom_lighting_off"
-alias: Master Bedroom Lighting Off
+alias: Master Bedroom - Lighting Off
 trigger:
   - platform: time
     at: "02:00:00"

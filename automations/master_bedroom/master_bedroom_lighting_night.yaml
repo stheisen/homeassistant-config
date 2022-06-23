@@ -1,5 +1,5 @@
 id: "master_bedroom_lighting_night"
-alias: Master Bedroom Lighting Night
+alias: Master Bedroom - Lighting Night
 trigger:
   - platform: time
     at: "22:45:00"

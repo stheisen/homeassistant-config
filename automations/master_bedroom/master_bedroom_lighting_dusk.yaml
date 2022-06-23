@@ -1,5 +1,5 @@
 id: "master_bedroom_lighting_dusk"
-alias: Master Bedroom Lighting Dusk
+alias: Master Bedroom - Lighting Dusk
 trigger:
   - platform: sun
     event: sunset
